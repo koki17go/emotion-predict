@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="container mt-5 text-center">
+    <h2 class="mb-4">顔の写真をアップロードしてください</h2>
+    <form action="/upload" method="post" enctype="multipart/form-data" class="form-group">
+        <div class="mb-3">
+            <input type="file" id="upload_file" name="upload_file" multiple="multiple" class="form-control" accept="image/*">
+        </div>
+        <button type="submit" class="btn btn-primary">送信</button>
+    </form>
+</div>
+
+{% endblock %}
