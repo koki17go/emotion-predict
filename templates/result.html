@@ -1,11 +1,24 @@
 {% extends "layout.html" %}
 {% block content %}
-<div class="text-center mt-5">
-    <h1 class="mb-4">{{ emotion_dict }}</h1>
-    <h3 class="text-muted mb-4">{{dominant_emotion_per}}確率で<strong>{{ dominant_emotion }}</strong>です</h3>
-    <h3 class="text-muted mb-4">{{angry}}の確率で怒りです</h3>
-    <img src="{{ img_path }}" alt="Uploaded Image" class="img-thumbnail mb-4" style="width: 200px;">
-    <a href="/" class="btn btn-secondary">戻る</a>
+<div class="card mx-auto shadow p-4" style="max-width: 600px;">
+    <div class="text-center">
+        <h4 class="text-muted">主な感情は <strong>{{ dominant_emotion }}</strong> です ({{ dominant_emotion_per }}%)</h4>
+        <p class="mb-3">以下は感情予測の詳細です:</p>
+    </div>
+    <ul class="list-group list-group-flush mb-4">
+        <li class="list-group-item"> Angry: {{ angry }}%</li>
+        <li class="list-group-item"> Disgust: {{ disgust }}%</li>
+        <li class="list-group-item"> Fear: {{ fear }}%</li>
+        <li class="list-group-item"> Happy: {{ happy }}%</li>
+        <li class="list-group-item"> Sad: {{ sad }}%</li>
+        <li class="list-group-item"> Surprise: {{ surprise }}%</li>
+        <li class="list-group-item"> Neutral: {{ neutral }}%</li>
+    </ul>
+    <div class="text-center mb-4">
+        <img src="{{ img_path }}" alt="Uploaded Image" class="img-thumbnail" style="width: 200px;">
+    </div>
+    <div class="text-center">
+        <a href="/" class="btn btn-secondary">戻る</a>
+    </div>
 </div>
 {% endblock %}
-

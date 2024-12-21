@@ -22,9 +22,9 @@ def upload_user_files():
         img_path = os.path.join(UPLOAD_FOLDER,upload_file.filename)
         upload_file.save(img_path)
 
-        jisho, dominant_emotion, emotion_dict, angry, dominant_emotion_per = predict(img_path)
+        jisho, dominant_emotion, angry, disgust, fear, happy, sad, surprise, neutral, dominant_emotion_per = predict(img_path)
 
-        return render_template('result.html', dominant_emotion=dominant_emotion, emotion_dict=emotion_dict, angry=angry, dominant_emotion_per=dominant_emotion_per, img_path=img_path)
+        return render_template('result.html', dominant_emotion=dominant_emotion, angry=angry, disgust=disgust, fear=fear, happy=happy, sad=sad, surprise=surprise, neutral=neutral, dominant_emotion_per=dominant_emotion_per, img_path=img_path)
 
 
 if __name__ == "__main__":
